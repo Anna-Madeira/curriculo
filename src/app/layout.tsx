@@ -4,7 +4,7 @@ import "./globals.css";
 import React from 'react';
 
 const Footer = () => (
-  <footer className="text-center text-white text-sm py-4 bg-neutral-900">
+  <footer className="text-center text-neutral-500 text-sm py-4 bg-neutral-950 border-t border-white/10">
     <p>Desenvolvido com React, TypeScript e Tailwind CSS</p>
   </footer>
 );
