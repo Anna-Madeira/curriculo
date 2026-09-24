@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Currículo Online
 
-## Getting Started
+Meu currículo em formato de página web: resumo, experiência profissional, formação, certificações, idiomas e habilidades, com links diretos para contato, GitHub, LinkedIn e portfólio.
 
-First, run the development server:
+🔗 **[anna-madeira.github.io/curriculo](https://anna-madeira.github.io/curriculo/)**
+
+## Telas
+
+<p align="center">
+  <img src="docs/screenshots/desktop.png" alt="Currículo no desktop" width="68%" />
+  &nbsp;
+  <img src="docs/screenshots/mobile.png" alt="Currículo no celular" width="24%" />
+</p>
+
+## Tecnologias
+
+- [Next.js 15](https://nextjs.org) (App Router, exportação estática)
+- [React 19](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Lucide](https://lucide.dev) para os ícones
+
+## Como funciona
+
+Todo o conteúdo do currículo fica num único objeto (`resumeData`) no topo de `src/app/page.tsx`. Para atualizar uma experiência, habilidade ou certificação, basta editar esse objeto: a página é montada a partir dele.
+
+O Next.js está configurado com `output: "export"`, então o build gera um site 100% estático na pasta `out/`, servido pelo GitHub Pages no caminho `/curriculo`.
+
+## Rodando localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse `http://localhost:3000/curriculo`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cada push na branch `main` dispara o workflow [`deploy.yml`](.github/workflows/deploy.yml), que roda o build e publica a pasta `out/` no GitHub Pages.
